@@ -1,4 +1,25 @@
+
+
+const FileServer = require('file-server');
+const http = require("http");
+
+const host = 'localhost';
+const port = 8000;
+
+
 const exportUsersToExcel = require('./exportService');
+
+
+const requestListener = function (req, res) {
+    res.writeHead(200);
+    res.end("server on live port 8000");
+};
+
+const server = http.createServer(requestListener);
+server.listen(port, host, () => {
+    console.log(`Server is running on http://${host}:${port}`);
+});
+
 
 const users = [
     { 
@@ -22,6 +43,8 @@ const workSheetColumnName = [
 
 const workSheetName= 'User';
 const filepath = '../outputFiles/excel-from-js.xlsx';
+
+
 
 exportUsersToExcel(users, workSheetColumnName, workSheetName, filepath);
 // genera el archivo, falta agregar caso para situación donde ya exixte un archivo con ese 

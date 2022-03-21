@@ -41,15 +41,20 @@ const handleReadBtn = async function() {
 const exportXlsx = async function() {
 	const HTMLOUT = document.getElementById('htmlout');
 	const wb = XLSX.utils.table_to_book(HTMLOUT);
-	const o = await electron.dialog.showSaveDialog({
+	let saveDialog = await electron.dialog.showSaveDialog({
 		title: 'Save file as',
 		filters: [{
 			name: "Spreadsheets",
 			extensions: EXTENSIONS
 		}]
 	});
-	console.log(o.filePath);
-	XLSX.writeFile(wb, o.filePath);
+
+	saveDialog.then(function(saveTo) {
+		console.log(saveTo.filePath);
+	})
+
+	// console.log(saveDialog.filePath);
+	XLSX.writeFile(wb, saveDialog.filePath);
 	electron.dialog.showMessageBox({ message: "Exported data to " + o.filePath, buttons: ["OK"] });
 };
 

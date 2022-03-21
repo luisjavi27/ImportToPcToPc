@@ -2,13 +2,21 @@
   "name": "prueba1",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/index.js",
+  
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": " node ./src/index.js"
   },
   "author": "LJ",
   "license": "ISC",
   "dependencies": {
+    "@types/express": "^4.17.13",
+    "express": "^4.17.2",
+    "file-saver": "^2.0.5",
     "xlsx": "^0.18.1"
+  },
+  "devDependencies": {
+    "@types/file-saver": "^2.0.5"
   }
 }

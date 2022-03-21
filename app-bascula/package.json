@@ -1,0 +1,33 @@
+{
+  "name": "app-bascula",
+  "version": "1.0.0",
+  "description": "App escritorio para recolección de datos desde una bascula por RS232",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luisjavi27"
+  },
+  "keywords": [
+    "app",
+    "escritorio",
+    "multiplataforma",
+    "bascula",
+    "peso",
+    "electron"
+  ],
+  "author": "LJI",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^17.1.2",
+    "electron-builder": "^22.14.13",
+    "electron-rebuild": "^3.2.7"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.0.8",
+    "serialport": "^10.4.0",
+    "xlsx": "^0.18.4"
+  }
+}

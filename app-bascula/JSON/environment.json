@@ -1,0 +1,11 @@
+[
+    {
+        "port":"Com3",
+        "baud":9600,
+        "itemDelimiter":"<0D><0A>",
+        "delimeter":"\r\n",
+        "values":[],
+        "excludeValues":[],
+        "includeValues":[]
+    }
+]
