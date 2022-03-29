@@ -28,6 +28,6 @@
   "dependencies": {
     "@electron/remote": "^2.0.8",
     "serialport": "^10.4.0",
-    "xlsx": "^0.18.4"
+    "xlsx-renderer": "^2.4.4"
   }
 }

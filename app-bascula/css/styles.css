@@ -1,0 +1,24 @@
+
+.navbar{
+    background-color: #219ebc;
+    height: 65px;
+}
+
+.icono{
+    height: 30px;  
+}
+
+.icono-header {
+    margin-left:5px;
+      
+  }
+
+.icono-header:hover {
+    opacity: 40%;
+      
+  }
+
+.icono-header:active {
+    opacity: 100%;
+
+}

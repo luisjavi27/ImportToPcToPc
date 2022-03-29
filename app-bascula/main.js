@@ -1,16 +1,17 @@
 const{app, BrowserWindow}= require('electron');
-const XLSX = require('xlsx');
 require('@electron/remote/main').initialize();
 const path = require('path');
 const url = require('url');
 
 let ventanaPrincipal = null;
 
+
 function crearVentanaPrincipal () {
     ventanaPrincipal = new BrowserWindow({
-        width: 600,
-        height:500,
-        resizable: false,
+        useContentSize: true,
+        // width: 800,
+        // height:500,
+        // resizable: false,
         webPreferences: {
             worldSafeExecuteJavaScript: true,
             enableRemoteModule: true,
@@ -33,6 +34,10 @@ function crearVentanaPrincipal () {
     // ventanaPrincipal.setMenu(null);
 }
 
+
+
+
+
 app.once('ready', crearVentanaPrincipal);
 
 app.on('window-all-closed', () =>{
@@ -46,3 +51,4 @@ app.on('activate', () =>{
         crearVentanaPrincipal();
     }
 })
+

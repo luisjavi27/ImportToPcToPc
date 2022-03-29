@@ -1,12 +1,24 @@
+const { leerJSON} = require('./json')
+const path = require('path')
+const {Renderer} = require('xlsx-renderer')
+
 const electron = require('@electron/remote');
-const XLSX = require('xlsx');
 
-async function exportXlsx (htmlTabla) {
-    
+const renderer = new Renderer();
 
-	const HTMLOUT = htmlTabla;
-	const wb = XLSX.utils.table_to_book(HTMLOUT);
-	const o = await electron.dialog.showSaveDialog({
+async function exportarJsontoExcel(){
+    let viewModel={
+        "data":null,
+        "headers":null
+    }
+
+    viewModel.data = leerJSON('BD');
+    viewModel.headers = leerJSON('cabecera')
+    const pathLog = path.resolve(__dirname)+'./../../plantillaExcel/'
+
+    const result = await renderer.renderFromFile(pathLog+"plantilla.xlsx" , viewModel);
+
+    const o = await electron.dialog.showSaveDialog({
 		title: 'Guardar como',
         defaultPath: 'Export',
 		filters: [{
@@ -14,10 +26,8 @@ async function exportXlsx (htmlTabla) {
 			extensions: EXTENSIONS
 		}]
 	});
-	
-	XLSX.writeFile(wb, o.filePath);
-	// electron.dialog.showMessageBox({ message: "Exported data to " + o.filePath, buttons: ["OK"] });// muestra una ventana de confirmaciòn luego de exportar el archivo
-};
 
+    await result.xlsx.writeFile(o.filePath);
+}
 
-module.exports={exportXlsx}
+module.exports={exportarJsontoExcel}

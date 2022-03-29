@@ -1,0 +1,85 @@
+
+.icono{
+    height: 30px;
+    
+}
+.nav-pills .nav-link.active,
+.show>.nav-pills .nav-link{
+    background: #023047 !important;
+    color: white !important
+}
+.nav-pills .nav-link{
+    color: black !important;
+    background: #219ebc !important;
+    margin-bottom: 0px !important;
+        
+}
+
+.nav-pills .nav-link:hover {
+    opacity: 40%;
+      
+}
+
+.nav-pills .nav-link.active:hover {
+    opacity: 100% !important;
+      
+}
+
+.tab-content {
+    margin-left: 30px !important;
+}
+
+.page-header {
+    margin-top: 30px;
+    margin-bottom:60px;
+}
+
+
+
+#header{
+    background: #219ebc;
+    height: 65px;
+    display: flex;
+    align-items: center;
+}
+
+#guardar-cerrar{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: inline;
+    height: 40px;
+}
+
+#botonGuardar{
+    margin-right: 15px;
+}
+
+#botonGuardar:hover {
+    opacity: 40%;
+      
+}
+
+#botonGuardar:active {
+    opacity: 100% ;
+      
+}
+
+#botonCerrar:hover {
+    opacity: 40%;
+      
+}
+
+#botonCerrar:active {
+    opacity: 100% ;
+      
+}
+#fecha-hora-sistema{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+span{
+    width: 180px;
+}

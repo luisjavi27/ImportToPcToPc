@@ -15,11 +15,13 @@ class Conection {
     get getItemDelimiter(){return this.objeto.itemDelimiter};
     get getUserPort(){return this.objeto.port};
     get getUserBaudrate(){return this.objeto.baud}
+    get getHeader(){return this.objeto.header}
 
     set setDelimeter(newDelimeter){this.objeto.delimeter=newDelimeter};
     set setItemDelimiter(newItemDelimiter){this.objeto.itemDelimiter=newItemDelimiter};
     set setUserPort(newUserPort){this.objeto.port=newUserPort};
     set setUserBaudrate(newUserBaudrate){this.objeto.baud=newUserBaudrate}
+    set setHeader(newHeader){this.objeto.header=newHeader}
 }
 
 module.exports={Conection}

@@ -4,7 +4,7 @@
         "baud":9600,
         "itemDelimiter":"<0D><0A>",
         "delimeter":"\r\n",
-        "values":[],
+        "header":0,
         "excludeValues":[],
         "includeValues":[]
     }

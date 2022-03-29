@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="./bootstrap/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link href="./css/stylesConfig.css" rel="stylesheet">
+
+
+  <title>Configuración</title>
+</head>
+
+<body>
+  <div id="header" class="container-fluid ">
+
+    <ul class="nav nav-pills " id="pills-tab" role="tablist">
+
+      <li class="navbar-brand" href="#">
+
+        <img src="./images/supply.png"  height="30" class="d-inline-block align-text-top">
+        Sinapsis
+
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="pills-trama-tab" data-bs-toggle="pill" data-bs-target=".pills-trama"
+          type="button" role="tab" aria-controls="pills-trama" aria-selected="true">Trama</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-RS232-tab" data-bs-toggle="pill" data-bs-target=".pills-RS232" type="button"
+          role="tab" aria-controls="pills-RS232" aria-selected="true">RS232</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-ethernet-tab" data-bs-toggle="pill" data-bs-target="#pills-ethernet"
+          type="button" role="tab" aria-controls="pills-ethernet" aria-selected="false">Ethernet</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-columnas-tab" data-bs-toggle="pill" data-bs-target="#pills-columnas"
+          type="button" role="tab" aria-controls="pills-columnas" aria-selected="false">Columnas</button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active pills-trama" role="tabpanel" aria-labelledby="pills-trama-tab">
+      <div class="row ">
+        <div class="col-md-12">
+          <div class="page-header text-center">
+            <h1>
+              Parametros de la trama de comunicación
+            </h1>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row ">
+        <div class="col col-md-6">
+          <div class="input-group mb-3 ">
+            <span class="input-group-text">Fin de trama</span>
+            <input type="text" class="form-control " id="inputFinTrama" aria-label="Fin de trama" required>
+          </div>
+
+          <div class="input-group mb-3 ">
+            <span class="input-group-text">Separador de datos</span>
+            <input type="text" class="form-control " id="inputSeparador" required>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade pills-RS232" role="tabpanel" aria-labelledby="pills-RS232-tab">
+      <div class="row ">
+        <div class="col-md-12">
+          <div class="page-header text-center">
+            <h1>
+              Parametros de conexión RS232
+            </h1>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row ">
+        <div class="col col-md-6">
+          <div class="input-group mb-3">
+            <span class="input-group-text" for="inputGroupSelect01">Puerto</span>
+            <select class="form-select" id="inputGroupSelect01">
+              <option selected>...</option>
+              <option value="Com1">Com1</option>
+              <option value="Com2">Com2</option>
+              <option value="Com3">Com3</option>
+              <option value="Com4">Com4</option>
+            </select>
+          </div>
+
+
+          <div class="input-group mb-3 ">
+            <span class="input-group-text" for="inputGroupSelect01">Baudios</span>
+            <select class="form-select" id="inputGroupSelect01">
+              <option selected>...</option>
+              <option value="4800">4800</option>
+              <option value="9600">9600</option>
+              <option value="14400">14400</option>
+              <option value="19200">19200</option>
+              <option value="38400">38400</option>
+              <option value="57600">57600</option>
+              <option value="115200">115200</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="pills-ethernet" role="tabpanel" aria-labelledby="pills-ethernet-tab">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="page-header text-center">
+            <h1>
+              Parametros de conexión Ethernet
+            </h1>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col col-md-6">
+          <div class="input-group mb-3">
+            <span class="input-group-text">Dirección IP</span>
+            <input type="text" class="form-control" id="inputIpEtip" required>
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Puerto</span>
+            <input type="number" class="form-control" id="inputPuertoEtip" required>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="pills-columnas" role="tabpanel" aria-labelledby="pills-columnas-tab">
+      <div class="row ">
+        <div class="col-md-12">
+          <div class="page-header text-center">
+            <h1>
+              Titulos de columnas
+            </h1>
+          </div>
+        </div>
+        <br>
+        <div class="row ">
+          <div class="input-group mb-3 ">
+            <span class="input-group-text">Columnas</span>
+            <textarea type="text" class="form-control " id="inputColumnas" required> </textarea>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="fecha-hora-sistema">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Agregar campos de fecha y hora del sistema?</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div  id="guardar-cerrar"> 
+      <img src="./images/diskette.png" id="botonGuardar" class=".img-thumbnail boton ">
+      <img src="./images/close.png" id="botonCerrar" class=".img-thumbnail ">
+  </div>
+
+  <script src="./bootstrap/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="js/config.js"></script>
+
+</body>
+
+</html>

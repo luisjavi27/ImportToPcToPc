@@ -1,31 +1,41 @@
 const fs = require('fs');
 const path = require('path');
+const { type } = require('process');
 const pathLog = path.resolve(__dirname, '../../JSON')+'/';
-const pathEnvironment= path.resolve(__dirname, '../../JSON/environment.json')
+
 
 
 function leerJSON(archiveName){
     let dataSinFormato = fs.readFileSync((pathLog+ archiveName+'.json'), 'utf8');
-    let data = JSON.parse(dataSinFormato);
+    let  data = JSON.parse(dataSinFormato);
+    
     return data;
 }
 
-function escribirData(unArray, archiveName){
-    let stringJson = JSON.stringify(unArray);
-    fs.writeFileSync((pathLog+ archiveName+'.json'), stringJson);
+function escribirArchivoBD(unJson, archiveName){
+    console.log(unJson);
+    let stringJson = JSON.stringify(unJson);
+    console.log(stringJson);
+    const ruta = pathLog+ archiveName+'.json'
+    
+    fs.writeFileSync(ruta, stringJson);
     
 }
 
-function guardarJSON(unArray, archiveName){
+function guardarJsonBD(unArray, archiveName){
     
-    let data = leerJSON(archiveName);
-    data= data.concat(unArray);
-    
-    escribirData(data, archiveName);
+    let oldJson = leerJSON(archiveName);
+
+    let newJson = []
+    newJson.push(Object.assign({}, unArray));
+  
+    newJson = newJson.concat(oldJson);
+
+    escribirArchivoBD(newJson, archiveName);
 }
 
 
 module.exports = {
     leerJSON,
-    guardarJSON
+    guardarJsonBD
 }
