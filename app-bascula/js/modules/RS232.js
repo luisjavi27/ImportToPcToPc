@@ -23,7 +23,7 @@ async function getPorts() {
     }
     else{
         result.ports = ports
-        console.log(result.ports)
+        
         return 
     }
  
@@ -35,7 +35,7 @@ async function getPorts() {
  async function listSerialPorts(){
     
     const ports =  await SerialPort.list()
-    console.log(ports)
+    
     return ports
    
 }

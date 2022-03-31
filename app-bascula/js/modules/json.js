@@ -13,9 +13,8 @@ function leerJSON(archiveName){
 }
 
 function escribirArchivoBD(unJson, archiveName){
-    console.log(unJson);
+    
     let stringJson = JSON.stringify(unJson);
-    console.log(stringJson);
     const ruta = pathLog+ archiveName+'.json'
     
     fs.writeFileSync(ruta, stringJson);
@@ -34,8 +33,19 @@ function guardarJsonBD(unArray, archiveName){
     escribirArchivoBD(newJson, archiveName);
 }
 
+function escribirJsonConfig(unObjeto, archiveName ){
+    
+    let newJson = []
+    newJson.push(unObjeto);
+  
+    escribirArchivoBD(newJson, archiveName);
+}
+
+
+
 
 module.exports = {
     leerJSON,
-    guardarJsonBD
+    guardarJsonBD,
+    escribirJsonConfig
 }

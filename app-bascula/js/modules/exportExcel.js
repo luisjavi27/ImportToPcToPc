@@ -1,8 +1,9 @@
 const { leerJSON} = require('./json')
 const path = require('path')
 const {Renderer} = require('xlsx-renderer')
-
 const electron = require('@electron/remote');
+
+EXTENSIONS = ["xlsx"];
 
 const renderer = new Renderer();
 

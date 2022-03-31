@@ -32,8 +32,8 @@
         <button class="nav-link" id="pills-RS232-tab" data-bs-toggle="pill" data-bs-target=".pills-RS232" type="button"
           role="tab" aria-controls="pills-RS232" aria-selected="true">RS232</button>
       </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="pills-ethernet-tab" data-bs-toggle="pill" data-bs-target="#pills-ethernet"
+      <li class="nav-item " role="presentation">
+        <button class="nav-link " id="pills-ethernet-tab" data-bs-toggle="pill" data-bs-target="#pills-ethernet"
           type="button" role="tab" aria-controls="pills-ethernet" aria-selected="false">Ethernet</button>
       </li>
       <li class="nav-item" role="presentation">
@@ -59,12 +59,12 @@
         <div class="col col-md-6">
           <div class="input-group mb-3 ">
             <span class="input-group-text">Fin de trama</span>
-            <input type="text" class="form-control " id="inputFinTrama" aria-label="Fin de trama" required>
+            <input type="text" class="form-control " id="inputFinTrama" aria-label="Fin de trama" value= "" >
           </div>
 
           <div class="input-group mb-3 ">
             <span class="input-group-text">Separador de datos</span>
-            <input type="text" class="form-control " id="inputSeparador" required>
+            <input type="text" class="form-control " id="inputSeparador" >
           </div>
         </div>
       </div>
@@ -85,26 +85,15 @@
           <div class="input-group mb-3">
             <span class="input-group-text" for="inputGroupSelect01">Puerto</span>
             <select class="form-select" id="listado-puertos-com">
-              <!-- <option selected>...</option>
-              <option value="Com1">Com1</option>
-              <option value="Com2">Com2</option>
-              <option value="Com3">Com3</option>
-              <option value="Com4">Com4</option> -->
+         
             </select>
           </div>
 
 
           <div class="input-group mb-3 ">
-            <span class="input-group-text" for="inputGroupSelect01">Baudios</span>
-            <select class="form-select" id="inputGroupSelect01">
-              <option selected>...</option>
-              <option value="4800">4800</option>
-              <option value="9600">9600</option>
-              <option value="14400">14400</option>
-              <option value="19200">19200</option>
-              <option value="38400">38400</option>
-              <option value="57600">57600</option>
-              <option value="115200">115200</option>
+            <span class="input-group-text" for="inputGroupSelect02">Baudios</span>
+            <select class="form-select" id="listado-baudios">
+   
             </select>
           </div>
         </div>

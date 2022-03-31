@@ -6,10 +6,7 @@ const  {separateBy} = require('./js/modules/parseData')
 const {guardarJsonBD, leerJSON} = require('./js/modules/json')
 const {Conection}= require('./js/modules/conection')
 const {exportarJsontoExcel}= require('./js/modules/exportExcel')
-
-const path = require('path')
-
-const EXTENSIONS = ["xlsx"];
+const  {leerEnvironmentParameters} = require('./js/modules/environment')
 
 const conection = new Conection(leerEnvironmentParameters(), 0);
 
@@ -64,12 +61,6 @@ function crearVentanaConfig(){
 }
 
 
-//jsontoexcel
-
-function leerEnvironmentParameters(){
-
-    return leerJSON('environment')
-}
 
 function agregarEventListeners(){
     botonConfig.addEventListener('click', crearVentanaConfig);
@@ -113,9 +104,9 @@ function generarHtmlLinea(data){
 
 }
 
-function generarCabeceraTabla(conexion){
+function generarCabeceraTabla(){
 
-    const cabecera= leerJSON('cabecera')[conexion].cabecera;
+    const cabecera= conection.getHeader;
     let htmlCabecera="";
     let i=0
     for (const item in cabecera){
@@ -139,4 +130,4 @@ function visualizarTabla(data) {
 
 
 agregarEventListeners();
-generarCabeceraTabla(0);
+generarCabeceraTabla();
